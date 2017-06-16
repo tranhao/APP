@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        APIRequest.arrNews { (arrNews) in
+            for i in 0..<arrNews.count{
+                let news: NewsObject = arrNews[i] 
+                print(news.content!)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
